@@ -3,6 +3,9 @@ import java.util.Random;
 
 public class CoinFlipGame {
 
+    private int userWins = 0; // Tracks Player 1's wins
+    private int computerWins = 0; // Tracks Computer's wins
+
     public void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -33,7 +36,9 @@ public class CoinFlipGame {
                 }
             }
 
-            int userWins = 0, computerWins = 0, rounds = 0;
+            userWins = 0; // Reset wins for a new game
+            computerWins = 0; // Reset wins for a new game
+            int rounds = 0;
 
             System.out.println("The game has started! Press enter to continue!");
             scanner.nextLine();
@@ -104,6 +109,30 @@ public class CoinFlipGame {
 
         System.out.println("Thanks for playing Coin Flip!");
         scanner.close();
+
+        // Display final wins and losses
+        System.out.println("Final Results:");
+        System.out.println("Player Wins: " + player1Wins());
+        System.out.println("Player Losses: " + player1Loss());
+        System.out.println("Computer Wins: " + computerWins());
+        System.out.println("Computer Losses: " + computerLoss());
+    }
+
+    // New methods to get wins and losses
+    public int player1Wins() {
+        return userWins;
+    }
+
+    public int player1Loss() {
+        return computerWins;
+    }
+
+    public int computerWins() {
+        return computerWins;
+    }
+
+    public int computerLoss() {
+        return userWins;
     }
 
     public static void main(String[] args) {
