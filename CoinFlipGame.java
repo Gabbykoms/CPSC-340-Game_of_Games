@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class CoinFlipGame {
 
-    public static void main(String[] args) {
+    public void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         boolean gameRunning = true;
@@ -41,7 +41,6 @@ public class CoinFlipGame {
             while (userWins < (bestOf / 2 + 1) && computerWins < (bestOf / 2 + 1)) {
                 rounds++;
 
-                // Suppress round announcement for the first round
                 if (rounds > 1) {
                     System.out.println("Round " + rounds + " has begun");
                 }
@@ -105,5 +104,10 @@ public class CoinFlipGame {
 
         System.out.println("Thanks for playing Coin Flip!");
         scanner.close();
+    }
+
+    public static void main(String[] args) {
+        CoinFlipGame game = new CoinFlipGame();
+        game.start(); // Start the game using the start() method
     }
 }
