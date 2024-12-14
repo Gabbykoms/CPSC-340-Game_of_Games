@@ -4,7 +4,7 @@ public class EvenOddGame {
     private static int player1Wins = 0;
     private static int player2Wins = 0;
 
-    public static void main(String[] args) {
+    public void start() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Even Odd Game!");
