@@ -47,7 +47,7 @@ public class EvenOddGame {
                 player1Score++;
             }
 
-            System.out.println("Scoreboard: Player 1 - " + player1Score + ", Player 2 - " + player2Score);
+            displayScoreboard(player1Score, player2Score);
         }
 
         // Determine overall winner
@@ -61,6 +61,11 @@ public class EvenOddGame {
         }
 
         scanner.close();
+    }
+
+    // Method to display the scoreboard
+    public static void displayScoreboard(int player1Score, int player2Score) {
+        System.out.println("Scoreboard: Player 1 - " + player1Score + ", Player 2 - " + player2Score);
     }
 }
 
