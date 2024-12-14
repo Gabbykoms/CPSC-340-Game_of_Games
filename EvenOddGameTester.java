@@ -1,7 +1,7 @@
-
 class EvenOddGameTester {
     public static void main(String[] args) {
-        testGame();
+        EvenOddGame game = new EvenOddGame();
+        game.start();
 
         System.out.println("Player 1 Total Wins: " + EvenOddGame.player1Wins());
         System.out.println("Player 1 Total Losses: " + EvenOddGame.player1Losses());
