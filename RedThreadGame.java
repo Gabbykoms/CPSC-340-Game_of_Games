@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RedThreadGame {
 
-    public static void main(String[] args) {
+    public void play() {
         Scanner scanner = new Scanner(System.in);
 
         // S01: Welcome message and choose order
@@ -16,7 +16,7 @@ public class RedThreadGame {
                 if (userChoice == 1 || userChoice == 2) {
                     break;
                 }
-                System.out.println("Invalid number! Please enter 1 or 2"); // A01.1
+                System.out.println("Invalid number! Please enter 1 or 2");
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a valid number: 1 or 2.");
             }
@@ -36,7 +36,7 @@ public class RedThreadGame {
                 if (bestOf > 0 && bestOf % 2 != 0) {
                     break;
                 }
-                System.out.println("Invalid best out of value! Please enter an odd integer!"); // A11.1
+                System.out.println("Invalid best out of value! Please enter an odd integer!");
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a valid odd integer.");
             }
@@ -51,7 +51,7 @@ public class RedThreadGame {
                 if (threadsPerPick > 0 && threadsPerPick < 10 && 20 % threadsPerPick == 0) {
                     break;
                 }
-                System.out.println("Invalid Number! Please enter a number that is less than 10 and a factor of 20!"); // A03.1
+                System.out.println("Invalid Number! Please enter a number that is less than 10 and a factor of 20!");
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a valid number.");
             }
@@ -91,7 +91,7 @@ public class RedThreadGame {
                         if (move.equals("pick")) {
                             break;
                         }
-                        System.out.println("Invalid move! Enter 'pick' to choose threads."); // A05.1
+                        System.out.println("Invalid move! Enter 'pick' to choose threads.");
                     }
 
                     // User picks threads
@@ -153,10 +153,15 @@ public class RedThreadGame {
             if (exitChoice.equals("1")) {
                 break;
             }
-            System.out.println("Invalid entry! Enter '1' to exit game."); // A09.1 / A10.1
+            System.out.println("Invalid entry! Enter '1' to exit game.");
         }
 
         System.out.println("Thanks for playing The Red Thread Game!");
         scanner.close();
+    }
+
+    public static void main(String[] args) {
+        RedThreadGame game = new RedThreadGame();
+        game.play(); // Start the game
     }
 }
