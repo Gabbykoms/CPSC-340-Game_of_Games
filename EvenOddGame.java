@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class EvenOddGame {
+    private static int player1Wins = 0;
+    private static int player2Wins = 0;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -42,9 +45,11 @@ public class EvenOddGame {
             if (sum % 2 == 0) {
                 System.out.println("The sum is Even. Player 2 wins this round!");
                 player2Score++;
+                player2Wins++;
             } else {
                 System.out.println("The sum is Odd. Player 1 wins this round!");
                 player1Score++;
+                player1Wins++;
             }
 
             displayScoreboard(player1Score, player2Score);
@@ -67,5 +72,21 @@ public class EvenOddGame {
     public static void displayScoreboard(int player1Score, int player2Score) {
         System.out.println("Scoreboard: Player 1 - " + player1Score + ", Player 2 - " + player2Score);
     }
-}
 
+    // Accessor methods for wins and losses
+    public static int player1Wins() {
+        return player1Wins;
+    }
+
+    public static int player1Losses() {
+        return player2Wins;
+    }
+
+    public static int player2Wins() {
+        return player2Wins;
+    }
+
+    public static int player2Losses() {
+        return player1Wins;
+    }
+}
