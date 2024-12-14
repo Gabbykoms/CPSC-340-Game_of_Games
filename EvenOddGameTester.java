@@ -1,14 +1,20 @@
+
 class EvenOddGameTester {
     public static void main(String[] args) {
         testGame();
+
+        System.out.println("Player 1 Total Wins: " + EvenOddGame.player1Wins());
+        System.out.println("Player 1 Total Losses: " + EvenOddGame.player1Losses());
+        System.out.println("Player 2 Total Wins: " + EvenOddGame.player2Wins());
+        System.out.println("Player 2 Total Losses: " + EvenOddGame.player2Losses());
     }
 
     public static void testGame() {
         // Simulate inputs for testing
         int[][] testCases = {
-                {3, 2}, // Player 1: 3, Player 2: 2 (Sum: 5, Odd)
-                {4, 4}, // Player 1: 4, Player 2: 4 (Sum: 8, Even)
-                {1, 5}, // Player 1: 1, Player 2: 5 (Sum: 6, Even)
+            {3, 2}, // Player 1: 3, Player 2: 2 (Sum: 5, Odd)
+            {4, 4}, // Player 1: 4, Player 2: 4 (Sum: 8, Even)
+            {1, 5}, // Player 1: 1, Player 2: 5 (Sum: 6, Even)
         };
 
         int player1Score = 0;
@@ -26,12 +32,14 @@ class EvenOddGameTester {
             if (sum % 2 == 0) {
                 System.out.println("The sum is Even. Player 2 wins this round!");
                 player2Score++;
+                EvenOddGame.player2Wins++;
             } else {
                 System.out.println("The sum is Odd. Player 1 wins this round!");
                 player1Score++;
+                EvenOddGame.player1Wins++;
             }
 
-            displayScoreboard(player1Score, player2Score);
+            EvenOddGame.displayScoreboard(player1Score, player2Score);
         }
 
         // Final results
@@ -42,10 +50,5 @@ class EvenOddGameTester {
         } else {
             System.out.println("The test ended in a tie!");
         }
-    }
-
-    // Method to display the scoreboard
-    public static void displayScoreboard(int player1Score, int player2Score) {
-        System.out.println("Scoreboard: Player 1 - " + player1Score + ", Player 2 - " + player2Score);
     }
 }
