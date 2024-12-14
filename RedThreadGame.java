@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class RedThreadGame {
 
+    private int userWins = 0; // Tracks Player 1's wins
+    private int computerWins = 0; // Tracks Computer's wins
+
     public void play() {
         Scanner scanner = new Scanner(System.in);
 
@@ -57,7 +60,7 @@ public class RedThreadGame {
             }
         }
 
-        int userWins = 0, computerWins = 0, round = 0;
+        int round = 0;
 
         while (userWins < (bestOf / 2 + 1) && computerWins < (bestOf / 2 + 1)) {
             round++;
@@ -158,6 +161,30 @@ public class RedThreadGame {
 
         System.out.println("Thanks for playing The Red Thread Game!");
         scanner.close();
+
+        // Display final wins and losses
+        System.out.println("Final Results:");
+        System.out.println("Player Wins: " + player1Wins());
+        System.out.println("Player Losses: " + player1Loss());
+        System.out.println("Computer Wins: " + computerWins());
+        System.out.println("Computer Losses: " + computerLoss());
+    }
+
+    // New methods to get wins and losses
+    public int player1Wins() {
+        return userWins;
+    }
+
+    public int player1Loss() {
+        return computerWins;
+    }
+
+    public int computerWins() {
+        return computerWins;
+    }
+
+    public int computerLoss() {
+        return userWins;
     }
 
     public static void main(String[] args) {
