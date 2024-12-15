@@ -7,7 +7,6 @@ import java.util.Scanner;
  */
 
 public class FindTheThimble {
-
     private int player1Wins = 0;
     private int player2Wins = 0;
 
@@ -25,6 +24,9 @@ public class FindTheThimble {
             bestOf = getInt(scanner, "Enter the 'best out of' value (odd integer > 0):",
                 "Invalid number! Enter an odd integer greater than 0.", 1, Integer.MAX_VALUE);
         }
+
+        int player1Wins = 0;
+        int player2Wins = 0;
 
         // Prompt the user to choose their role
         String roleChoice = getString(scanner, "Enter the role you want: 'c' for chooser or 'h' for hider:",
@@ -92,15 +94,12 @@ public class FindTheThimble {
         while (true) {
             String exitChoice = scanner.nextLine();
             if ("1".equals(exitChoice)) {
-                System.exit(0);
+                break;
             } else {
                 System.out.println("Invalid input. Enter '1' to exit.");
             }
         }
     }
-
-   
-
 
     private int getInt(Scanner scanner, String prompt, String errorMessage, int min, int max) {
         while (true) {
@@ -132,46 +131,30 @@ public class FindTheThimble {
             System.out.println(errorMessage);
         }
     }
+    public int player1Wins() {
+        return player1Wins;
+    }
+    
+    public int player2Wins() {
+        return player2Wins;
+    }
+    
+    public int player1Losses() {
+        return player2Wins;
+    }
+    
+    public int player2Losses() {
+        return player1Wins;
+    }
 
     public static void main(String[] args) {
         FindTheThimble game = new FindTheThimble();
         game.play();
     }
-     /**
- * Retrieves the total number of wins for Player 1.
- *
- * @return the count of Player 1's wins.
- */
-public int player1Wins() {
-    return player1Wins;
 }
 
-/**
- * Retrieves the total number of wins for Player 2.
- *
- * @return the count of Player 2's wins.
- */
-public int player2Wins() {
-    return player2Wins;
-}
 
-/**
- * Retrieves the total number of losses for Player 1.
- * Note: Player 1's losses are equivalent to Player 2's wins.
- *
- * @return the count of Player 1's losses.
- */
-public int player1Losses() {
-    return player2Wins;
-}
 
-/**
- * Retrieves the total number of losses for Player 2.
- * Note: Player 2's losses are equivalent to Player 1's wins.
- *
- * @return the count of Player 2's losses.
- */
-public int player2Losses() {
-    return player1Wins;
-}
-}
+
+
+
