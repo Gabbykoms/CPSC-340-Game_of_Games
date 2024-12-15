@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -108,7 +109,7 @@ public class CoinFlipGame {
         }
 
         System.out.println("Thanks for playing Coin Flip!");
-        scanner.close();
+        // scanner.close();
 
         // Display final wins and losses
         System.out.println("Final Results:");

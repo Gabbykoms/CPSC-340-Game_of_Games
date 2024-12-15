@@ -52,41 +52,40 @@ public class EvenOddGame {
                 player1Wins++;
             }
 
-            displayScoreboard(player1Score, player2Score);
+            // displayScoreboard(player1Score, player2Score);
         }
 
         // Determine overall winner
         System.out.println("\nGame Over!");
-        if (player1Score > player2Score) {
-            System.out.println("Player 1 is the overall winner!");
-        } else if (player2Score > player1Score) {
-            System.out.println("Player 2 is the overall winner!");
-        } else {
-            System.out.println("It's a tie!");
-        }
+        // if (player1Score > player2Score) {
+        //     System.out.println("Player 1 is the overall winner!");
+        // } else if (player2Score > player1Score) {
+        //     System.out.println("Player 2 is the overall winner!");
+        // } else {
+        //     System.out.println("It's a tie!");
+        // }
 
-        scanner.close();
     }
 
     // Method to display the scoreboard
-    public static void displayScoreboard(int player1Score, int player2Score) {
-        System.out.println("Scoreboard: Player 1 - " + player1Score + ", Player 2 - " + player2Score);
-    }
+    // public static void displayScoreboard(int player1Score, int player2Score) {
+    //     System.out.println("Scoreboard: Player 1 - " + player1Score + ", Player 2 - " + player2Score);
+    // }
 
     // Accessor methods for wins and losses
-    public static int player1Wins() {
+    public int player1Wins() {
         return player1Wins;
     }
 
-    public static int player1Losses() {
+    public int player1Losses() {
         return player2Wins;
     }
 
-    public static int player2Wins() {
+    public int player2Wins() {
         return player2Wins;
     }
 
-    public static int player2Losses() {
+    public int player2Losses() {
         return player1Wins;
     }
 }
