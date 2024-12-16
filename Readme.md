@@ -57,7 +57,7 @@ The primary entry point for the application is the `GameOfGames` class, which pr
 
 1. **Clone this repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Gabbykoms/CPSC-340-Game_of_Games.git
    ```
 2. **Navigate to the project directory**:
 
